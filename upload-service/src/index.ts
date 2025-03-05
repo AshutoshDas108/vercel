@@ -17,7 +17,7 @@ app.use(express.json());
 
 //uploadFile('dist/output/72kmh/package.json', path.join(__dirname, 'output/72kmh/package.json'))
 
-app.post("/deploy", async (req, res) => {
+app.post("/upload", async (req, res) => {
   const reqUrl = req.body.url; // actual github url
   const id = generate();
   await simpleGit().clone(reqUrl, path.join(__dirname, `output/${id}`));
